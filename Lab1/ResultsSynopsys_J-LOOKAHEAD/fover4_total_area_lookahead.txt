@@ -1,0 +1,146 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'my_iir_lookahead' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : my_iir_lookahead
+Version: O-2018.06-SP4
+Date   : Sat Nov 13 17:57:23 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: filter/reg_in/Q_reg[0]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: filter/reg4/Q_reg[16]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  my_iir_lookahead   5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  filter/reg_in/Q_reg[0]/CK (DFFR_X1)                     0.00       0.00 r
+  filter/reg_in/Q_reg[0]/Q (DFFR_X1)                      0.10       0.10 f
+  filter/reg_in/Q[0] (Regn_N18_8)                         0.00       0.10 f
+  filter/add1/A[0] (signed_sum_Nbit_N18_4)                0.00       0.10 f
+  filter/add1/add_30/A[0] (signed_sum_Nbit_N18_4_DW01_add_0)
+                                                          0.00       0.10 f
+  filter/add1/add_30/U2/ZN (AND2_X1)                      0.05       0.14 f
+  filter/add1/add_30/U1_1/CO (FA_X1)                      0.09       0.23 f
+  filter/add1/add_30/U1_2/CO (FA_X1)                      0.09       0.32 f
+  filter/add1/add_30/U1_3/CO (FA_X1)                      0.09       0.41 f
+  filter/add1/add_30/U1_4/CO (FA_X1)                      0.09       0.50 f
+  filter/add1/add_30/U1_5/CO (FA_X1)                      0.09       0.59 f
+  filter/add1/add_30/U1_6/CO (FA_X1)                      0.09       0.68 f
+  filter/add1/add_30/U1_7/CO (FA_X1)                      0.09       0.77 f
+  filter/add1/add_30/U1_8/CO (FA_X1)                      0.09       0.86 f
+  filter/add1/add_30/U1_9/CO (FA_X1)                      0.09       0.96 f
+  filter/add1/add_30/U1_10/CO (FA_X1)                     0.09       1.05 f
+  filter/add1/add_30/U1_11/CO (FA_X1)                     0.09       1.14 f
+  filter/add1/add_30/U1_12/CO (FA_X1)                     0.09       1.23 f
+  filter/add1/add_30/U1_13/CO (FA_X1)                     0.09       1.32 f
+  filter/add1/add_30/U1_14/CO (FA_X1)                     0.09       1.41 f
+  filter/add1/add_30/U1_15/CO (FA_X1)                     0.09       1.50 f
+  filter/add1/add_30/U1_16/CO (FA_X1)                     0.09       1.59 f
+  filter/add1/add_30/U1_17/S (FA_X1)                      0.11       1.70 f
+  filter/add1/add_30/SUM[17] (signed_sum_Nbit_N18_4_DW01_add_0)
+                                                          0.00       1.70 f
+  filter/add1/U14/ZN (AOI22_X1)                           0.05       1.74 r
+  filter/add1/U13/ZN (INV_X1)                             0.04       1.78 f
+  filter/add1/C[17] (signed_sum_Nbit_N18_4)               0.00       1.78 f
+  filter/mul_b0/A[17] (signed_mult_Nbit_N18_5)            0.00       1.78 f
+  filter/mul_b0/mult_18/a[17] (signed_mult_Nbit_N18_5_DW_mult_tc_0)
+                                                          0.00       1.78 f
+  filter/mul_b0/mult_18/U732/ZN (INV_X2)                  0.12       1.90 r
+  filter/mul_b0/mult_18/U1097/ZN (XNOR2_X1)               0.09       1.98 f
+  filter/mul_b0/mult_18/U702/ZN (NOR2_X2)                 0.15       2.14 r
+  filter/mul_b0/mult_18/U1043/ZN (AOI22_X1)               0.05       2.19 f
+  filter/mul_b0/mult_18/U1042/ZN (OAI221_X1)              0.04       2.23 r
+  filter/mul_b0/mult_18/U1041/ZN (XNOR2_X1)               0.07       2.30 r
+  filter/mul_b0/mult_18/U183/S (HA_X1)                    0.08       2.38 r
+  filter/mul_b0/mult_18/U182/S (FA_X1)                    0.13       2.51 f
+  filter/mul_b0/mult_18/U181/S (FA_X1)                    0.15       2.66 r
+  filter/mul_b0/mult_18/U180/S (FA_X1)                    0.12       2.78 f
+  filter/mul_b0/mult_18/U179/S (FA_X1)                    0.13       2.90 f
+  filter/mul_b0/mult_18/U114/CO (FA_X1)                   0.10       3.01 f
+  filter/mul_b0/mult_18/U113/CO (FA_X1)                   0.09       3.10 f
+  filter/mul_b0/mult_18/U112/CO (FA_X1)                   0.09       3.19 f
+  filter/mul_b0/mult_18/U111/CO (FA_X1)                   0.09       3.28 f
+  filter/mul_b0/mult_18/U110/CO (FA_X1)                   0.09       3.37 f
+  filter/mul_b0/mult_18/U109/CO (FA_X1)                   0.09       3.46 f
+  filter/mul_b0/mult_18/U108/CO (FA_X1)                   0.09       3.55 f
+  filter/mul_b0/mult_18/U107/CO (FA_X1)                   0.09       3.64 f
+  filter/mul_b0/mult_18/U106/CO (FA_X1)                   0.09       3.73 f
+  filter/mul_b0/mult_18/U105/CO (FA_X1)                   0.09       3.82 f
+  filter/mul_b0/mult_18/U104/CO (FA_X1)                   0.09       3.91 f
+  filter/mul_b0/mult_18/U103/CO (FA_X1)                   0.09       4.00 f
+  filter/mul_b0/mult_18/U102/CO (FA_X1)                   0.09       4.09 f
+  filter/mul_b0/mult_18/U101/CO (FA_X1)                   0.09       4.19 f
+  filter/mul_b0/mult_18/U100/CO (FA_X1)                   0.09       4.28 f
+  filter/mul_b0/mult_18/U99/CO (FA_X1)                    0.09       4.37 f
+  filter/mul_b0/mult_18/U98/S (FA_X1)                     0.13       4.50 r
+  filter/mul_b0/mult_18/product[34] (signed_mult_Nbit_N18_5_DW_mult_tc_0)
+                                                          0.00       4.50 r
+  filter/mul_b0/C[34] (signed_mult_Nbit_N18_5)            0.00       4.50 r
+  filter/reg4/R[16] (Regn_N18_3)                          0.00       4.50 r
+  filter/reg4/U9/ZN (NAND2_X1)                            0.03       4.52 f
+  filter/reg4/U8/ZN (OAI21_X1)                            0.03       4.55 r
+  filter/reg4/Q_reg[16]/D (DFFR_X1)                       0.01       4.56 r
+  data arrival time                                                  4.56
+
+  clock MY_CLK (rise edge)                                7.20       7.20
+  clock network delay (ideal)                             0.00       7.20
+  clock uncertainty                                      -0.07       7.13
+  filter/reg4/Q_reg[16]/CK (DFFR_X1)                      0.00       7.13 r
+  library setup time                                     -0.03       7.10
+  data required time                                                 7.10
+  --------------------------------------------------------------------------
+  data required time                                                 7.10
+  data arrival time                                                 -4.56
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.53
+
+
+1
+ 
+****************************************
+Report : area
+Design : my_iir_lookahead
+Version: O-2018.06-SP4
+Date   : Sat Nov 13 17:57:23 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         2177
+Number of nets:                          7723
+Number of cells:                         4610
+Number of combinational cells:           4393
+Number of sequential cells:               165
+Number of macros/black boxes:               0
+Number of buf/inv:                        694
+Number of references:                       1
+
+Combinational area:               8023.092013
+Buf/Inv area:                      387.296002
+Noncombinational area:             877.800028
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  8900.892042
+Total area:                 undefined
+1

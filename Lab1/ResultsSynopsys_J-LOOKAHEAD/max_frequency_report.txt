@@ -1,0 +1,123 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : my_iir_lookahead
+Version: O-2018.06-SP4
+Date   : Sat Nov 13 17:45:40 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: filter/reg2/Q_reg[13]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: filter/reg1/Q_reg[17]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  my_iir_lookahead   5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  filter/reg2/Q_reg[13]/CK (DFFR_X1)                      0.00       0.00 r
+  filter/reg2/Q_reg[13]/Q (DFFR_X1)                       0.10       0.10 r
+  filter/reg2/Q[13] (Regn_N18_5)                          0.00       0.10 r
+  filter/U14/Z (BUF_X1)                                   0.04       0.14 r
+  filter/mul_a1/A[13] (signed_mult_Nbit_N18_1)            0.00       0.14 r
+  filter/mul_a1/mult_18/a[13] (signed_mult_Nbit_N18_1_DW_mult_tc_2)
+                                                          0.00       0.14 r
+  filter/mul_a1/mult_18/U1433/Z (BUF_X1)                  0.10       0.24 r
+  filter/mul_a1/mult_18/U1502/ZN (XNOR2_X1)               0.07       0.31 f
+  filter/mul_a1/mult_18/U1428/ZN (OAI22_X1)               0.08       0.39 r
+  filter/mul_a1/mult_18/U1371/ZN (INV_X1)                 0.03       0.42 f
+  filter/mul_a1/mult_18/U453/CO (FA_X1)                   0.09       0.51 f
+  filter/mul_a1/mult_18/U446/CO (FA_X1)                   0.10       0.61 f
+  filter/mul_a1/mult_18/U440/CO (FA_X1)                   0.09       0.71 f
+  filter/mul_a1/mult_18/U435/CO (FA_X1)                   0.10       0.81 f
+  filter/mul_a1/mult_18/U1819/ZN (NAND2_X1)               0.03       0.84 r
+  filter/mul_a1/mult_18/U1198/ZN (INV_X1)                 0.03       0.87 f
+  filter/mul_a1/mult_18/U1662/ZN (AOI21_X1)               0.04       0.91 r
+  filter/mul_a1/mult_18/U1179/ZN (OAI21_X1)               0.04       0.95 f
+  filter/mul_a1/mult_18/U1545/ZN (AOI21_X1)               0.07       1.02 r
+  filter/mul_a1/mult_18/U1817/ZN (OAI21_X1)               0.04       1.06 f
+  filter/mul_a1/mult_18/U1618/ZN (AOI21_X1)               0.04       1.10 r
+  filter/mul_a1/mult_18/U1802/ZN (OAI21_X1)               0.03       1.13 f
+  filter/mul_a1/mult_18/U1839/ZN (AOI21_X1)               0.06       1.19 r
+  filter/mul_a1/mult_18/U1094/ZN (XNOR2_X1)               0.05       1.24 f
+  filter/mul_a1/mult_18/product[33] (signed_mult_Nbit_N18_1_DW_mult_tc_2)
+                                                          0.00       1.24 f
+  filter/mul_a1/C[33] (signed_mult_Nbit_N18_1)            0.00       1.24 f
+  filter/add2/A[15] (signed_sum_Nbit_N18_3)               0.00       1.24 f
+  filter/add2/add_30/A[15] (signed_sum_Nbit_N18_3_DW01_add_2)
+                                                          0.00       1.24 f
+  filter/add2/add_30/U343/ZN (NAND2_X1)                   0.04       1.28 r
+  filter/add2/add_30/U311/ZN (OAI21_X1)                   0.03       1.31 f
+  filter/add2/add_30/U341/ZN (AOI21_X1)                   0.05       1.37 r
+  filter/add2/add_30/U350/ZN (OAI21_X1)                   0.03       1.40 f
+  filter/add2/add_30/U338/ZN (AOI21_X1)                   0.07       1.47 r
+  filter/add2/add_30/U334/ZN (OAI21_X1)                   0.04       1.51 f
+  filter/add2/add_30/U358/ZN (XNOR2_X1)                   0.06       1.56 f
+  filter/add2/add_30/SUM[17] (signed_sum_Nbit_N18_3_DW01_add_2)
+                                                          0.00       1.56 f
+  filter/add2/U52/Z (MUX2_X1)                             0.07       1.63 f
+  filter/add2/C[17] (signed_sum_Nbit_N18_3)               0.00       1.63 f
+  filter/reg1/R[17] (Regn_N18_6)                          0.00       1.63 f
+  filter/reg1/U41/ZN (NAND2_X1)                           0.03       1.66 r
+  filter/reg1/U15/ZN (NAND2_X1)                           0.02       1.68 f
+  filter/reg1/Q_reg[17]/D (DFFR_X1)                       0.01       1.69 f
+  data arrival time                                                  1.69
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  filter/reg1/Q_reg[17]/CK (DFFR_X1)                      0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
+  --------------------------------------------------------------------------
+  data required time                                                -0.11
+  data arrival time                                                 -1.69
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.80
+
+
+1
+ 
+****************************************
+Report : area
+Design : my_iir_lookahead
+Version: O-2018.06-SP4
+Date   : Sat Nov 13 17:45:40 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         2177
+Number of nets:                         10210
+Number of cells:                         7314
+Number of combinational cells:           7096
+Number of sequential cells:               165
+Number of macros/black boxes:               0
+Number of buf/inv:                       1317
+Number of references:                       1
+
+Combinational area:              10509.394002
+Buf/Inv area:                      865.298000
+Noncombinational area:             877.800028
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 11387.194031
+Total area:                 undefined
+1
