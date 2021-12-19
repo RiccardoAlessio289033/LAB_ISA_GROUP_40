@@ -1,0 +1,99 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Tue Nov 23 11:37:00 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I1/A_SIG_reg[19]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/pipe_SIG_in_int/Q_reg[18]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpmul_pipeline     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I1/A_SIG_reg[19]/CK (DFF_X1)                            0.00       0.00 r
+  I1/A_SIG_reg[19]/Q (DFF_X1)                             0.18       0.18 r
+  U229/ZN (INV_X1)                                        0.04       0.22 f
+  U248/ZN (XNOR2_X2)                                      0.08       0.30 f
+  U227/ZN (INV_X1)                                        0.09       0.39 r
+  U1485/ZN (OAI22_X1)                                     0.06       0.45 f
+  U1497/CO (FA_X1)                                        0.10       0.55 f
+  U1546/S (FA_X1)                                         0.14       0.69 r
+  U1612/ZN (XNOR2_X1)                                     0.06       0.76 r
+  U1613/ZN (XNOR2_X1)                                     0.07       0.83 r
+  U878/ZN (XNOR2_X1)                                      0.07       0.90 r
+  U945/ZN (XNOR2_X1)                                      0.06       0.96 r
+  U390/ZN (NOR2_X1)                                       0.03       0.99 f
+  U300/ZN (INV_X1)                                        0.03       1.02 r
+  U281/ZN (AND2_X1)                                       0.05       1.08 r
+  U351/ZN (NAND2_X1)                                      0.03       1.11 f
+  U1627/ZN (OAI21_X1)                                     0.05       1.16 r
+  U873/ZN (NAND2_X1)                                      0.04       1.20 f
+  U667/ZN (AND2_X1)                                       0.05       1.25 f
+  U2260/ZN (OAI21_X1)                                     0.05       1.29 r
+  U2262/ZN (XNOR2_X1)                                     0.06       1.35 r
+  I2/pipe_SIG_in_int/Q_reg[18]/D (DFF_X1)                 0.01       1.36 r
+  data arrival time                                                  1.36
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  I2/pipe_SIG_in_int/Q_reg[18]/CK (DFF_X1)                0.00      -0.07 r
+  library setup time                                     -0.03      -0.10
+  data required time                                                -0.10
+  --------------------------------------------------------------------------
+  data required time                                                -0.10
+  data arrival time                                                 -1.36
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.46
+
+
+1
+ 
+****************************************
+Report : area
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Tue Nov 23 11:37:00 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                           97
+Number of nets:                          2982
+Number of cells:                         2685
+Number of combinational cells:           2398
+Number of sequential cells:               283
+Number of macros/black boxes:               0
+Number of buf/inv:                        306
+Number of references:                      37
+
+Combinational area:               3220.195984
+Buf/Inv area:                      200.564000
+Noncombinational area:            1287.971955
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  4508.167939
+Total area:                 undefined
+1

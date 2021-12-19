@@ -1,0 +1,96 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sun Dec 19 17:27:10 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: input_reg_1/MY_CLK_r_REG463_S1
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/mult_180/MY_CLK_r_REG459_S2
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpmul_pipeline     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input_reg_1/MY_CLK_r_REG463_S1/CK (DFF_X1)              0.00       0.00 r
+  input_reg_1/MY_CLK_r_REG463_S1/Q (DFF_X1)               0.11       0.11 r
+  input_reg_1/Q[5] (Regn_N32_1)                           0.00       0.11 r
+  I1/FP_A[5] (FPmul_stage1)                               0.00       0.11 r
+  I1/I0/FP[5] (UnpackFP_1)                                0.00       0.11 r
+  I1/I0/SIG[5] (UnpackFP_1)                               0.00       0.11 r
+  I1/A_SIG[5] (FPmul_stage1)                              0.00       0.11 r
+  I2/A_SIG[5] (FPmul_stage2)                              0.00       0.11 r
+  I2/mult_180/a[5] (FPmul_stage2_DW_mult_uns_3)           0.00       0.11 r
+  I2/mult_180/U3630/Z (XOR2_X1)                           0.07       0.18 r
+  I2/mult_180/U3201/ZN (NAND2_X1)                         0.04       0.22 f
+  I2/mult_180/U2878/Z (BUF_X2)                            0.06       0.27 f
+  I2/mult_180/U2458/ZN (OAI22_X1)                         0.06       0.33 r
+  I2/mult_180/U1023/S (FA_X1)                             0.13       0.46 f
+  I2/mult_180/U3696/ZN (XNOR2_X1)                         0.06       0.52 f
+  I2/mult_180/U3643/ZN (XNOR2_X1)                         0.06       0.58 f
+  I2/mult_180/U2619/ZN (OR2_X2)                           0.06       0.63 f
+  I2/mult_180/U2656/ZN (AOI21_X1)                         0.04       0.67 r
+  I2/mult_180/U2653/ZN (OAI21_X1)                         0.03       0.71 f
+  I2/mult_180/MY_CLK_r_REG459_S2/D (DFF_X1)               0.01       0.72 f
+  data arrival time                                                  0.72
+
+  clock MY_CLK (rise edge)                                0.82       0.82
+  clock network delay (ideal)                             0.00       0.82
+  clock uncertainty                                      -0.07       0.75
+  I2/mult_180/MY_CLK_r_REG459_S2/CK (DFF_X1)              0.00       0.75 r
+  library setup time                                     -0.04       0.71
+  data required time                                                 0.71
+  --------------------------------------------------------------------------
+  data required time                                                 0.71
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.01
+
+
+1
+ 
+****************************************
+Report : area
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sun Dec 19 17:27:10 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         1417
+Number of nets:                          4754
+Number of cells:                         3301
+Number of combinational cells:           2731
+Number of sequential cells:               511
+Number of macros/black boxes:               0
+Number of buf/inv:                        378
+Number of references:                       7
+
+Combinational area:               3814.173989
+Buf/Inv area:                      237.804001
+Noncombinational area:            2312.337916
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  6126.511906
+Total area:                 undefined
+1

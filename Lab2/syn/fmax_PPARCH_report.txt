@@ -1,0 +1,113 @@
+ 
+****************************************
+Report : area
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sat Dec 18 23:39:57 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                         1309
+Number of nets:                          4491
+Number of cells:                         2806
+Number of combinational cells:           2517
+Number of sequential cells:               247
+Number of macros/black boxes:               0
+Number of buf/inv:                        395
+Number of references:                       6
+
+Combinational area:               4259.990018
+Buf/Inv area:                      259.350000
+Noncombinational area:            1173.857982
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  5433.848000
+Total area:                 undefined
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sat Dec 18 23:39:58 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I2/SIG_in_reg[27]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I3/SIG_out_round_reg[27]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpmul_pipeline     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I2/SIG_in_reg[27]/CK (DFF_X1)                           0.00       0.00 r
+  I2/SIG_in_reg[27]/Q (DFF_X1)                            0.09       0.09 f
+  I2/SIG_in[27] (FPmul_stage2)                            0.00       0.09 f
+  I3/SIG_in[27] (FPmul_stage3)                            0.00       0.09 f
+  I3/I9/SIG_in[27] (FPnormalize_SIG_width28_1)            0.00       0.09 f
+  I3/I9/U7/Z (MUX2_X1)                                    0.08       0.17 r
+  I3/I9/SIG_out[3] (FPnormalize_SIG_width28_1)            0.00       0.17 r
+  I3/I11/SIG_in[3] (FPround_SIG_width28)                  0.00       0.17 r
+  I3/I11/add_45/A[0] (FPround_SIG_width28_DW01_inc_0)     0.00       0.17 r
+  I3/I11/add_45/U1_1_1/CO (HA_X1)                         0.07       0.23 r
+  I3/I11/add_45/U1_1_2/CO (HA_X1)                         0.06       0.29 r
+  I3/I11/add_45/U1_1_3/CO (HA_X1)                         0.06       0.35 r
+  I3/I11/add_45/U1_1_4/CO (HA_X1)                         0.06       0.41 r
+  I3/I11/add_45/U1_1_5/CO (HA_X1)                         0.06       0.47 r
+  I3/I11/add_45/U1_1_6/CO (HA_X1)                         0.06       0.52 r
+  I3/I11/add_45/U1_1_7/CO (HA_X1)                         0.06       0.58 r
+  I3/I11/add_45/U1_1_8/CO (HA_X1)                         0.06       0.64 r
+  I3/I11/add_45/U1_1_9/CO (HA_X1)                         0.06       0.70 r
+  I3/I11/add_45/U1_1_10/CO (HA_X1)                        0.06       0.75 r
+  I3/I11/add_45/U1_1_11/CO (HA_X1)                        0.06       0.81 r
+  I3/I11/add_45/U1_1_12/CO (HA_X1)                        0.06       0.87 r
+  I3/I11/add_45/U1_1_13/CO (HA_X1)                        0.06       0.93 r
+  I3/I11/add_45/U1_1_14/CO (HA_X1)                        0.06       0.99 r
+  I3/I11/add_45/U1_1_15/CO (HA_X1)                        0.06       1.05 r
+  I3/I11/add_45/U1_1_16/CO (HA_X1)                        0.06       1.10 r
+  I3/I11/add_45/U3/ZN (AND2_X1)                           0.04       1.15 r
+  I3/I11/add_45/U1_1_18/CO (HA_X1)                        0.05       1.20 r
+  I3/I11/add_45/U6/ZN (AND4_X2)                           0.06       1.26 r
+  I3/I11/add_45/U1_1_22/CO (HA_X1)                        0.06       1.32 r
+  I3/I11/add_45/U1_1_23/CO (HA_X1)                        0.06       1.37 r
+  I3/I11/add_45/U8/ZN (XNOR2_X1)                          0.05       1.43 r
+  I3/I11/add_45/SUM[24] (FPround_SIG_width28_DW01_inc_0)
+                                                          0.00       1.43 r
+  I3/I11/U64/ZN (AOI22_X1)                                0.03       1.45 f
+  I3/I11/U63/ZN (INV_X1)                                  0.02       1.48 r
+  I3/I11/SIG_out[27] (FPround_SIG_width28)                0.00       1.48 r
+  I3/SIG_out_round_reg[27]/D (DFF_X2)                     0.01       1.49 r
+  data arrival time                                                  1.49
+
+  clock MY_CLK (rise edge)                                1.51       1.51
+  clock network delay (ideal)                             0.00       1.51
+  clock uncertainty                                      -0.07       1.44
+  I3/SIG_out_round_reg[27]/CK (DFF_X2)                    0.00       1.44 r
+  library setup time                                     -0.03       1.41
+  data required time                                                 1.41
+  --------------------------------------------------------------------------
+  data required time                                                 1.41
+  data arrival time                                                 -1.49
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.08
+
+
+1

@@ -1,0 +1,101 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sun Dec 19 17:43:42 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I1/A_SIG_reg[7]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/pipe_SIG_in_int/Q_reg[18]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpmul_pipeline     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I1/A_SIG_reg[7]/CK (DFF_X1)                             0.00       0.00 r
+  I1/A_SIG_reg[7]/Q (DFF_X1)                              0.09       0.09 r
+  U1019/Z (XOR2_X1)                                       0.09       0.19 r
+  U224/ZN (AND3_X1)                                       0.19       0.38 r
+  U791/ZN (AOI222_X1)                                     0.08       0.46 f
+  U1347/ZN (OAI21_X1)                                     0.05       0.51 r
+  U1348/Z (XOR2_X1)                                       0.08       0.58 r
+  U1404/S (HA_X1)                                         0.08       0.66 r
+  U1441/S (FA_X1)                                         0.12       0.78 f
+  U444/ZN (OR2_X1)                                        0.06       0.84 f
+  U1439/ZN (AOI21_X1)                                     0.04       0.88 r
+  U1440/ZN (OAI21_X1)                                     0.03       0.92 f
+  U1444/ZN (AOI21_X1)                                     0.04       0.95 r
+  U1446/ZN (OAI21_X1)                                     0.03       0.99 f
+  U1450/ZN (AOI21_X1)                                     0.04       1.03 r
+  U1494/ZN (OAI21_X1)                                     0.03       1.06 f
+  U1540/ZN (AOI21_X1)                                     0.04       1.10 r
+  U672/ZN (OAI21_X1)                                      0.04       1.14 f
+  U1562/ZN (AOI21_X1)                                     0.05       1.19 r
+  U716/ZN (OAI21_X1)                                      0.03       1.22 f
+  U715/ZN (NAND2_X1)                                      0.03       1.26 r
+  U725/ZN (AND2_X4)                                       0.06       1.32 r
+  U2168/ZN (OAI21_X1)                                     0.04       1.36 f
+  U2171/ZN (XNOR2_X1)                                     0.05       1.41 f
+  I2/pipe_SIG_in_int/Q_reg[18]/D (DFF_X1)                 0.01       1.42 f
+  data arrival time                                                  1.42
+
+  clock MY_CLK (rise edge)                                1.53       1.53
+  clock network delay (ideal)                             0.00       1.53
+  clock uncertainty                                      -0.07       1.46
+  I2/pipe_SIG_in_int/Q_reg[18]/CK (DFF_X1)                0.00       1.46 r
+  library setup time                                     -0.04       1.42
+  data required time                                                 1.42
+  --------------------------------------------------------------------------
+  data required time                                                 1.42
+  data arrival time                                                 -1.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+ 
+****************************************
+Report : area
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sun Dec 19 17:43:43 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                           97
+Number of nets:                          2705
+Number of cells:                         2475
+Number of combinational cells:           2189
+Number of sequential cells:               283
+Number of macros/black boxes:               0
+Number of buf/inv:                        266
+Number of references:                      44
+
+Combinational area:               2931.053989
+Buf/Inv area:                      167.580000
+Noncombinational area:            1284.779954
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  4215.833943
+Total area:                 undefined
+1

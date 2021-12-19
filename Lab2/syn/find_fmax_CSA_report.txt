@@ -1,0 +1,98 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpmul_pipeline
+Version: O-2018.06-SP4
+Date   : Sat Dec 18 23:08:37 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I1/B_SIG_reg[22]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/SIG_in_reg[24]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpmul_pipeline     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I1/B_SIG_reg[22]/CK (DFF_X1)                            0.00       0.00 r
+  I1/B_SIG_reg[22]/Q (DFF_X1)                             0.08       0.08 f
+  I1/B_SIG[22] (FPmul_stage1)                             0.00       0.08 f
+  I2/B_SIG[22] (FPmul_stage2)                             0.00       0.08 f
+  I2/mult_134/B[22] (FPmul_stage2_DW02_mult_0)            0.00       0.08 f
+  I2/mult_134/U349/ZN (INV_X1)                            0.03       0.11 r
+  I2/mult_134/U283/Z (BUF_X1)                             0.09       0.20 r
+  I2/mult_134/U372/ZN (NOR2_X1)                           0.04       0.24 f
+  I2/mult_134/U75/ZN (AND2_X1)                            0.05       0.29 f
+  I2/mult_134/S2_2_22/CO (FA_X1)                          0.10       0.39 f
+  I2/mult_134/S2_3_22/CO (FA_X1)                          0.11       0.50 f
+  I2/mult_134/S2_4_22/CO (FA_X1)                          0.11       0.61 f
+  I2/mult_134/S2_5_22/S (FA_X1)                           0.15       0.75 r
+  I2/mult_134/S2_6_21/S (FA_X1)                           0.11       0.87 f
+  I2/mult_134/S2_7_20/S (FA_X1)                           0.13       1.00 r
+  I2/mult_134/S2_8_19/S (FA_X1)                           0.11       1.11 f
+  I2/mult_134/S2_9_18/S (FA_X1)                           0.13       1.25 r
+  I2/mult_134/S2_10_17/S (FA_X1)                          0.11       1.36 f
+  I2/mult_134/S2_11_16/CO (FA_X1)                         0.09       1.45 f
+  I2/mult_134/S2_12_16/S (FA_X1)                          0.15       1.60 r
+  I2/mult_134/S2_13_15/S (FA_X1)                          0.11       1.72 f
+  I2/mult_134/S2_14_14/CO (FA_X1)                         0.09       1.81 f
+  I2/mult_134/S2_15_14/S (FA_X1)                          0.15       1.96 r
+  I2/mult_134/S2_16_13/S (FA_X1)                          0.11       2.07 f
+  I2/mult_134/S2_17_12/CO (FA_X1)                         0.09       2.16 f
+  I2/mult_134/S2_18_12/S (FA_X1)                          0.15       2.31 r
+  I2/mult_134/S2_19_11/S (FA_X1)                          0.11       2.42 f
+  I2/mult_134/S2_20_10/S (FA_X1)                          0.13       2.56 r
+  I2/mult_134/S2_21_9/S (FA_X1)                           0.11       2.67 f
+  I2/mult_134/S2_22_8/S (FA_X1)                           0.13       2.80 r
+  I2/mult_134/S2_23_7/S (FA_X1)                           0.11       2.92 f
+  I2/mult_134/S2_24_6/CO (FA_X1)                          0.09       3.01 f
+  I2/mult_134/S2_25_6/CO (FA_X1)                          0.11       3.12 f
+  I2/mult_134/S2_26_6/CO (FA_X1)                          0.11       3.22 f
+  I2/mult_134/S2_27_6/CO (FA_X1)                          0.11       3.33 f
+  I2/mult_134/S2_28_6/CO (FA_X1)                          0.11       3.44 f
+  I2/mult_134/S2_29_6/S (FA_X1)                           0.13       3.56 f
+  I2/mult_134/S2_30_5/CO (FA_X1)                          0.09       3.66 f
+  I2/mult_134/S4_5/S (FA_X1)                              0.14       3.80 r
+  I2/mult_134/S14_36/S (FA_X1)                            0.12       3.92 f
+  I2/mult_134/FS_1/A[34] (FPmul_stage2_DW01_add_2)        0.00       3.92 f
+  I2/mult_134/FS_1/U25/ZN (OR2_X1)                        0.07       3.98 f
+  I2/mult_134/FS_1/U29/ZN (NAND2_X1)                      0.03       4.01 r
+  I2/mult_134/FS_1/U141/ZN (NAND3_X1)                     0.03       4.05 f
+  I2/mult_134/FS_1/U30/ZN (NAND2_X1)                      0.03       4.08 r
+  I2/mult_134/FS_1/U17/ZN (AND3_X2)                       0.06       4.14 r
+  I2/mult_134/FS_1/U126/ZN (OAI211_X1)                    0.04       4.18 f
+  I2/mult_134/FS_1/U121/ZN (XNOR2_X1)                     0.06       4.23 f
+  I2/mult_134/FS_1/SUM[42] (FPmul_stage2_DW01_add_2)      0.00       4.23 f
+  I2/mult_134/PRODUCT[44] (FPmul_stage2_DW02_mult_0)      0.00       4.23 f
+  I2/SIG_in_reg[24]/D (DFF_X1)                            0.01       4.24 f
+  data arrival time                                                  4.24
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  I2/SIG_in_reg[24]/CK (DFF_X1)                           0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
+  --------------------------------------------------------------------------
+  data required time                                                -0.11
+  data arrival time                                                 -4.24
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.35
+
+
+1
